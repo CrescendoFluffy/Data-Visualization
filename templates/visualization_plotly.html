@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization of {{ filename }}</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Visualization of {{ filename }}</h1>
+
+    <h2>Financial Trend Analysis (Line Chart)</h2>
+    <div id="line_chart"></div>
+
+    <h2>Comparative Analysis (Bar Chart)</h2>
+    <div id="bar_chart"></div>
+
+    <h2>Data Distribution (Histogram)</h2>
+    <div id="histogram"></div>
+
+    <h2>Pie Chart Representation</h2>
+    <div id="pie_chart"></div>
+
+    <script>
+        var line_graph = {{ line_graphJSON | safe }};
+        Plotly.newPlot('line_chart', line_graph.data, line_graph.layout);
+
+        var bar_graph = {{ bar_graphJSON | safe }};
+        Plotly.newPlot('bar_chart', bar_graph.data, bar_graph.layout);
+
+        var hist_graph = {{ hist_graphJSON | safe }};
+        Plotly.newPlot('histogram', hist_graph.data, hist_graph.layout);
+
+        var pie_graph = {{ pie_graphJSON | safe }};
+        Plotly.newPlot('pie_chart', pie_graph.data, pie_graph.layout);
+    </script>
+</body>
+</html>

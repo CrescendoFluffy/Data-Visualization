@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #A9FFD4; /* Soft Mint Green */
+            color: #333; /* Dark Gray text for contrast */
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Financial Data CSV</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Upload</button>
+    </form>
+
+    <!-- Sample CSV Link -->
+    <h3>
+        <a href="https://cdn.discordapp.com/attachments/1160249560518643804/1348335479296360458/financial_data.csv?ex=67cf16c5&is=67cdc545&hm=b132307dc26f1a3b0ff47ddbcacc6e51007f8d02b94e5a5dc42b9ea760a5158d&" download>
+            Download Sample CSV File
+        </a>
+    </h3>
+</body>
+</html>
